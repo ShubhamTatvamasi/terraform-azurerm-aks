@@ -7,6 +7,7 @@ module "aks" {
   location             = azurerm_resource_group.rg.location
   kubernetes_version   = var.kubernetes_version
   orchestrator_version = var.kubernetes_version
+  network_plugin       = var.network_plugin
 
   depends_on = [
     azurerm_resource_group.rg
