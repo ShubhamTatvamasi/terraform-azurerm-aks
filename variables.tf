@@ -26,3 +26,22 @@ variable "network_plugin" {
   type        = string
   default     = "azure"
 }
+
+# ExternalDNS configuration
+variable "external_dns_namespace" {
+  description = "Namespace where ExternalDNS will run."
+  type        = string
+  default     = "external-dns"
+}
+
+variable "external_dns_service_account_name" {
+  description = "ServiceAccount name used by ExternalDNS."
+  type        = string
+  default     = "external-dns"
+}
+
+variable "external_dns_zone_name" {
+  description = "Azure DNS zone name managed by ExternalDNS (e.g., example.com)."
+  type        = string
+  default     = "azure.shubhamtatvamasi.com"
+}
