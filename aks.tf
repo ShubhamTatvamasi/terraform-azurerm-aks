@@ -9,6 +9,8 @@ module "aks" {
   orchestrator_version = var.kubernetes_version
   network_plugin       = var.network_plugin
 
+  sku_tier = "Standard"
+
   # Required for Azure Workload Identity (ExternalDNS auth)
   workload_identity_enabled = true
   oidc_issuer_enabled       = true
