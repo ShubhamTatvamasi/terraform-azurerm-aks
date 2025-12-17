@@ -15,6 +15,9 @@ module "aks" {
   workload_identity_enabled = true
   oidc_issuer_enabled       = true
 
+  # Increase node count
+  agents_count = 2
+
   depends_on = [
     azurerm_resource_group.rg
   ]
