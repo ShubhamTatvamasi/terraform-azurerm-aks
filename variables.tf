@@ -45,3 +45,28 @@ variable "external_dns_zone_name" {
   type        = string
   default     = "azure.shubhamtatvamasi.com"
 }
+
+variable "public_ssh_key" {
+  description = "A custom ssh public key to control access to the AKS nodes."
+  type        = string
+  default     = "~/.ssh/id_ed25519.pub"
+}
+
+# Autoscaling configuration
+variable "auto_scaling_enabled" {
+  description = "Enable autoscaling for the node pool."
+  type        = bool
+  default     = true
+}
+
+variable "agents_min_count" {
+  description = "Minimum number of nodes in the node pool."
+  type        = number
+  default     = 1
+}
+
+variable "agents_max_count" {
+  description = "Maximum number of nodes in the node pool."
+  type        = number
+  default     = 2
+}
