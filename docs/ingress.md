@@ -20,10 +20,10 @@ helm upgrade -i ingress-nginx ingress-nginx/ingress-nginx \
   --create-namespace \
   --namespace ingress-nginx \
   --set controller.ingressClassResource.default=true \
-    --set controller.replicaCount=2 \
-    --set controller.nodeSelector."kubernetes\.io/os"=linux \
-    --set defaultBackend.nodeSelector."kubernetes\.io/os"=linux \
-    --set controller.service.externalTrafficPolicy=Local
+  --set controller.replicaCount=2 \
+  --set controller.nodeSelector."kubernetes\.io/os"=linux \
+  --set defaultBackend.nodeSelector."kubernetes\.io/os"=linux \
+  --set controller.service.externalTrafficPolicy=Local
 ```
 
 
