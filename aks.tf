@@ -10,6 +10,7 @@ module "aks" {
   network_plugin       = var.network_plugin
   network_plugin_mode  = var.network_plugin_mode
   public_ssh_key       = var.public_ssh_key
+  net_profile_pod_cidr = var.net_profile_pod_cidr
 
   sku_tier = "Standard"
 

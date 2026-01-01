@@ -81,3 +81,9 @@ variable "agents_max_count" {
   type        = number
   default     = 2
 }
+
+variable "net_profile_pod_cidr" {
+  description = "The CIDR notation IP range from which to assign pod IPs when kubenet is used."
+  type        = string
+  default     = "10.244.0.0/16"
+}
