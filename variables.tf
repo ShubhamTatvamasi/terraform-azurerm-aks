@@ -27,6 +27,17 @@ variable "network_plugin" {
   default     = "azure"
 }
 
+variable "network_plugin_mode" {
+  description = "Network plugin mode. Set to 'overlay' for Azure CNI overlay mode."
+  type        = string
+  default     = "overlay"
+
+  validation {
+    condition     = var.network_plugin_mode == null || var.network_plugin_mode == "overlay"
+    error_message = "network_plugin_mode must be 'overlay' or null. Use 'overlay' for Azure CNI overlay mode."
+  }
+}
+
 # ExternalDNS configuration
 variable "external_dns_namespace" {
   description = "Namespace where ExternalDNS will run."

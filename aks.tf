@@ -8,6 +8,7 @@ module "aks" {
   kubernetes_version   = var.kubernetes_version
   orchestrator_version = var.kubernetes_version
   network_plugin       = var.network_plugin
+  network_plugin_mode  = var.network_plugin_mode
   public_ssh_key       = var.public_ssh_key
 
   sku_tier = "Standard"
