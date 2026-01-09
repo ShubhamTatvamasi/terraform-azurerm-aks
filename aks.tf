@@ -14,6 +14,12 @@ module "aks" {
 
   sku_tier = "Standard"
 
+  # Application Gateway Ingress Controller (AGIC) settings
+  create_role_assignments_for_application_gateway = false
+  green_field_application_gateway_for_ingress = {
+    subnet_cidr = "10.225.0.0/24"
+  }
+
   # Required for Azure Workload Identity (ExternalDNS auth)
   workload_identity_enabled = true
   oidc_issuer_enabled       = true

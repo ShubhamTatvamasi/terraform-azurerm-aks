@@ -26,6 +26,19 @@ helm upgrade -i ingress-nginx ingress-nginx/ingress-nginx \
   --set controller.service.externalTrafficPolicy=Local
 ```
 
+---
+
+## Azure Application Gateway Ingress Controller (AGIC)
+
+Set the Azure Application Gateway Ingress Controller as the default IngressClass:
+```bash
+kubectl annotate ingressclass azure-application-gateway \
+  ingressclass.kubernetes.io/is-default-class="true"
+```
+
+---
+
+## Test Ingress Controller
 
 ## Create Test Nginx Application
 Deploy a simple nginx application for testing the ingress controller.
@@ -51,6 +64,7 @@ metadata:
   annotations:
     external-dns.alpha.kubernetes.io/hostname: azure.shubhamtatvamasi.com
 spec:
+  ingressClassName: azure-application-gateway
   rules:
   - host: azure.shubhamtatvamasi.com
     http:
